@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Our Date ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-hearts"></div>
+
+<main>
+  <!-- STEP 1 -->
+  <section id="setup" class="screen active">
+    <div class="card setup-card">
+      <div class="logo">💌</div>
+      <div class="eyebrow">A little question for you</div>
+      <h1>Let's make a<br><span>beautiful memory.</span></h1>
+      <p class="sub">Enter your names and create a special proposal.</p>
+
+      <label>Your name</label>
+      <input id="yourName" placeholder="Mr">
+
+      <label>Their name</label>
+      <input id="theirName" placeholder="Mrs">
+
+      <label>Personal message <small>(optional)</small></label>
+      <textarea id="message" rows="3" placeholder="Write something from your heart..."></textarea>
+
+      <button class="main-btn" onclick="createProposal()">Continue <span>→</span></button>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section id="proposal" class="screen">
+    <div class="card proposal-card">
+      <div class="tiny">FOR SOMEONE VERY SPECIAL</div>
+      <div class="ring-heart">♥</div>
+      <p class="hello">Hey, <b id="theirNameShow"></b>...</p>
+      <h1>Will you go on a<br><span>date with me?</span></h1>
+      <p id="proposalText" class="romantic"></p>
+
+      <div class="choice-area">
+        <button id="yesBtn" class="choice yes" onclick="acceptProposal()">
+          <span class="icon">💖</span>
+          <span><b>YES!</b><small>I'd love to ❤️</small></span>
+        </button>
+        <button id="noBtn" class="choice no">
+          <span class="icon">🙈</span>
+          <span><b>NO</b><small>Maybe not...</small></span>
+        </button>
+      </div>
+      <p class="playful">There is only one right answer 😌</p>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section id="dateStep" class="screen">
+    <div class="card date-card">
+      <div class="calendar-icon">🗓️</div>
+      <div class="eyebrow">Yay! It's a date ❤️</div>
+      <h1>When should we<br><span>meet?</span></h1>
+      <p class="sub">Pick a date and time for your special day.</p>
+
+      <div class="date-grid">
+        <div>
+          <label>Date</label>
+          <input id="dateInput" type="date">
+        </div>
+        <div>
+          <label>Time</label>
+          <input id="timeInput" type="time">
+        </div>
+      </div>
+
+      <label>Where should we go? <small>(optional)</small></label>
+      <input id="placeInput" placeholder="e.g. Coffee shop, park, restaurant">
+
+      <button class="main-btn" onclick="confirmDate()">Set Our Date ❤️ <span>→</span></button>
+    </div>
+  </section>
+
+  <!-- STEP 4 -->
+  <section id="final" class="screen">
+    <div class="card final-card">
+      <div class="confetti">🎉</div>
+      <div class="eyebrow">IT'S OFFICIAL</div>
+      <h1><span id="finalTheir"></span>,<br>it's a date! ❤️</h1>
+      <p class="final-message" id="finalMessage"></p>
+
+      <div class="date-ticket">
+        <div class="ticket-icon">📅</div>
+        <div>
+          <small>OUR DATE</small>
+          <strong id="finalDate"></strong>
+        </div>
+      </div>
+
+      <div class="date-ticket">
+        <div class="ticket-icon">⏰</div>
+        <div>
+          <small>TIME</small>
+          <strong id="finalTime"></strong>
+        </div>
+      </div>
+
+      <div id="placeTicket" class="date-ticket">
+        <div class="ticket-icon">📍</div>
+        <div>
+          <small>PLACE</small>
+          <strong id="finalPlace"></strong>
+        </div>
+      </div>
+
+      <p class="from">With love, <b id="finalYour"></b> 💕</p>
+      <button class="outline-btn" onclick="restart()">Create Another ❤️</button>
+    </div>
+  </section>
+</main>
+
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
